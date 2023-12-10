@@ -2,6 +2,7 @@ package sem451;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Person  implements Serializable{
 	String name;
 	String id;

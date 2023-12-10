@@ -2,6 +2,7 @@ package sem451;
 
 public class LabRoom extends Room {
 
+	private static final long serialVersionUID = 1L;
 	private int numberOfPc;
 	private boolean vdi;
 	private boolean store;

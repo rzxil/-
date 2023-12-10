@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class ReserveBlock implements Serializable{
+		private static final long serialVersionUID = 1L;
 		Person by;
 		LocalDate d;
 		int clock;

@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class People implements FileNames, DataTasks{
@@ -68,6 +67,7 @@ public class People implements FileNames, DataTasks{
 	}
 
 	
+	@SuppressWarnings("unchecked")
 	public void loadDataFromFile() throws FileNotFoundException, IOException, Exception{
 		people.clear();
 		ObjectInputStream o;

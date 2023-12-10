@@ -2,6 +2,7 @@ package sem451;
 
 public class Student extends Person{
 
+private static final long serialVersionUID = 1L;
 private String major;
 private float gpa;
 private int level;

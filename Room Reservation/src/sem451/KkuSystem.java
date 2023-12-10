@@ -1,20 +1,19 @@
 package sem451;
+
 import java.util.*;
 import java.time.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
-
-public class KkuSystem implements FileNames, ReserveTasks{
+public class KkuSystem implements FileNames, ReserveTasks, OptionalReserveTasks {
 	
-
-	static List<ReserveBlock> reservations = new ArrayList<>();
-	static People people = new People();
-	
-	
+	  static List<ReserveBlock> reservations = new ArrayList<>();
+	    static People people = new People();
+	    
 	public void showCLIMenu() {
 		
 		load(); //load previous data
-		Person p; LocalDate l; int t; Room r; boolean st; Scanner sc = new Scanner(System.in); String s;
+		Person p; LocalDate l; int t; Room r; @SuppressWarnings("unused")
+		boolean st; Scanner sc = new Scanner(System.in); String s;
 		String timeStamp = new SimpleDateFormat("yyyy-MM-dd | HH:mm:ss").format(Calendar.getInstance().getTime());
 		while(true) {
 			System.out.println("\n\n\nWelcome to KKU LAB Managament System");
@@ -100,13 +99,9 @@ public class KkuSystem implements FileNames, ReserveTasks{
 		}
 		
 	}
-	public static void main(String args[]) {
-		reservations.add(new ReserveBlock(new Person("Ahmad","0",0),LocalDate.parse("2023-12-12"),12,new LabRoom("18S")));
-		//String s = sc.next();
-		//LocalDate l = LocalDate.parse(s);
-		//LocalTime t = LocalTime.parse(s);
-		//System.out.println(t);
-		new KkuSystem().showCLIMenu();
+	 public static void main(String args[]) {
+	        reservations.add(new ReserveBlock(new Person("Ahmad", "0", 0), LocalDate.parse("2023-12-12"), 12, new LabRoom("18S")));
+	        new KkuSystem().showCLIMenu();
 	}
 
 	@Override
@@ -207,7 +202,6 @@ public class KkuSystem implements FileNames, ReserveTasks{
 
 	@Override
 	public void removeAllEndedBlocks() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -222,6 +216,7 @@ public class KkuSystem implements FileNames, ReserveTasks{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean loadDataFromFile() {
 		reservations.clear();
@@ -317,6 +312,7 @@ public class KkuSystem implements FileNames, ReserveTasks{
 	}
 
 	
+	
 	//this method load users and sessions from external file to their collections
 	public void load() {
 		try {
@@ -330,6 +326,41 @@ public class KkuSystem implements FileNames, ReserveTasks{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	@Override
+	public List<ReserveBlock> findReservedBlocksBy(Person p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Person> findPeopleReservedBlock(ReserveBlock rb) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Integer> findHoursForReservedBlock(ReserveBlock rb, LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<LocalDate> findDatesForReservedBlock(ReserveBlock rb) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<ReserveBlock> findReservedBlockAt(int clock) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<ReserveBlock> findReservedBlockAt(LocalDate date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<ReserveBlock> findReservedBlockAt(LocalDate date, int clock) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
